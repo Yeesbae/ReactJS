@@ -1,0 +1,9 @@
+.main-header {
+    background-color: #282c34;
+    min-height: 5rem; /* rem uses root font size */
+    width: 100%;
+    display: flex;
+    padding: 0 10px;
+    color: white;
+    flex-direction: column;
+}

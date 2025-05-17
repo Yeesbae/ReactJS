@@ -1,0 +1,13 @@
+.main-footer {
+    background-color: #282c34;
+    min-height: 15rem;
+    width: 100%;
+    padding: 0 10px;
+    color: white;
+}
+
+.main-footer .copyright-text {
+    text-align: center;
+    padding: 1rem 0;
+}
+
