@@ -1,20 +1,72 @@
-.particulars {
+.booking-page {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.user-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    gap: 1.5rem;
+}
+
+.booking-page form div {
+    display: block;
+    /* flex-direction: column; */
+    text-align: center;
+}
+
+#flight-location {
+    display: flex;
+    flex-direction: column;
+}
+
+#flight-details {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    width: auto;
+}
+
+#flight-details div {
+    display: flex;
+    flex-direction: row;
     gap: 1rem;
 }
 
-.flight-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+#flight-type {
+    display: flex;
+    flex-direction: row;
 }
 
-.flight-table th {
+.flight-type input {
+    width: fit-content;
+}
+
+#user-detail {
+    display: flex;
+    flex-direction: column;
+}
+
+#user-detail div {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+#flight-table {
+    border-collapse: collapse;
+}
+
+#flight-table th {
     background-color: #f2f2f2;
 }
 
-.flight-table th, td {
+#flight-table th, td {
     border: 1px solid #ddd;
     padding: 8px;
 }
