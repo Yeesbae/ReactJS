@@ -28,7 +28,7 @@ export function Booking() {
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
         const { name, value } = e.target;
         setFormData((prev) => ({ ...prev, [name]: value }));
-    }
+    };
     
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -41,7 +41,29 @@ export function Booking() {
             position: "top-center",
             autoClose: 3000,
         });
-      };
+    };
+
+    const handleReset = () => {
+        setFormData({
+            selectedFlight: null,
+            firstName: "",
+            lastName: "",
+            email: "",
+            phone: "",
+            passport: "",
+            destination: "",
+            origin: "",
+            flightType: "",
+            departureDate: "",
+            returnDate: "",
+            hour: "",
+            minute: "",
+            selectedFlightID: "",
+            flightPrice: "",
+            flightDuration: "",
+            flightClass: "",
+        });
+    };
 
     return (
         <div className='booking-page'>
@@ -183,18 +205,22 @@ export function Booking() {
                 <h1>Flight Summary</h1>
                 <div>
                     {formData.selectedFlightID ? (
-                        <ul>
-                            <li><strong>Flight number: </strong>{formData.selectedFlightID}</li>
-                            <li><strong>Destination: </strong>{formData.destination}</li>
-                            <li><strong>Origin: </strong>{formData.origin}</li>
-                            <li><strong>Departure Date: </strong>{formData.departureDate}</li>
-                            <li><strong>Return Date: </strong>{formData.returnDate}</li>
-                            <li><strong>Departure Time: </strong>{formData.hour + " : " + formData.minute}</li>
-                            <li><strong>Type: </strong>{formData.flightType}</li>
-                            <li><strong>Class:</strong> {formData.flightClass}</li>
-                            <li><strong>Duration:</strong> {formData.flightDuration}</li>
-                            <li><strong>Price:</strong> SGD {formData.flightPrice}</li>
-                        </ul>
+                        <div>
+                            <ul>
+                                <li><strong>Flight number: </strong>{formData.selectedFlightID}</li>
+                                <li><strong>Destination: </strong>{formData.destination}</li>
+                                <li><strong>Origin: </strong>{formData.origin}</li>
+                                <li><strong>Departure Date: </strong>{formData.departureDate}</li>
+                                <li><strong>Return Date: </strong>{formData.returnDate}</li>
+                                <li><strong>Departure Time: </strong>{formData.hour + " : " + formData.minute}</li>
+                                <li><strong>Type: </strong>{formData.flightType}</li>
+                                <li><strong>Class:</strong> {formData.flightClass}</li>
+                                <li><strong>Duration:</strong> {formData.flightDuration}</li>
+                                <li><strong>Price:</strong> SGD {formData.flightPrice}</li>
+                            </ul>
+                            <button type="button" onClick={handleReset}>Clear all value</button>
+                        </div>
+                        
                     ) : (
                         <p>No flight selected.</p>
                     )}

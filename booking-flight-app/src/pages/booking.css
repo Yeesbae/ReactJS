@@ -6,7 +6,7 @@
     font-size: 1.3rem;
 }
 
-.booking-page select, option, input {
+.booking-page select, option, input, button{
     font-size: 1.3rem;
 }
 
@@ -80,6 +80,7 @@
     padding: 8px;
 }
 
+
 #flight-summary {
     display: block;
     align-items: center;
@@ -88,11 +89,22 @@
 }
 
 #flight-summary div {
+    display: flex;
+    flex-direction: column;
     width: max-content;
     text-align: left;
     line-height: 2rem;
+    align-items: center;
 }
 
 #flight-summary ul li{
     list-style-type: none;
+}
+
+#flight-summary button {
+    width: 150px;
+}
+
+#flight-summary button:hover {
+    color: blue;
 }
