@@ -71,6 +71,19 @@
     padding: 8px;
 }
 
-#result {
-    
+#flight-summary {
+    display: block;
+    align-items: center;
+    text-align: center;
+    width: fit-content;
+}
+
+#flight-summary div {
+    width: max-content;
+    text-align: left;
+    line-height: 1.5rem;
+}
+
+#flight-summary ul li{
+    list-style-type: none;
 }

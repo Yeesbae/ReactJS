@@ -6,6 +6,7 @@ import { flights } from '../data/flights';
 
 export function Booking() {
     const [formData, setFormData] = useState({
+        selectedFlight: null as null | typeof flights[0],
         firstName: "",
         lastName: "",
         email: "",
@@ -19,6 +20,9 @@ export function Booking() {
         hour: "",
         minute: "",
         selectedFlightID: "",
+        flightPrice: "",
+        flightDuration: "",
+        flightClass: "",
     });
     
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
@@ -150,7 +154,23 @@ export function Booking() {
                                 <td>{flight.flightDuration}</td>
                                 <td>{flight.flightClass}</td>
                                 <td>{flight.price}</td>
-                                <td><input type='radio' name="selectedFlightID" value={flight.id} checked={formData.selectedFlightID === flight.id} onChange={handleChange}></input></td>
+                                <td><input 
+                                        type='radio' 
+                                        name="selectedFlight" 
+                                        value={flight.id} 
+                                        checked={formData.selectedFlightID === flight.id} 
+                                        onChange={() => 
+                                            setFormData((prev) => ({
+                                                ...prev,
+                                                origin: String(flight.from),
+                                                destination: String(flight.to),
+                                                selectedFlightID: flight.id,
+                                                flightPrice: String(flight.price),
+                                                flightClass: flight.flightClass,
+                                                flightDuration: String(flight.flightDuration),
+                                            }))
+                                        } />
+                                </td>
                             </tr>
                         ))}
                     </table>
@@ -159,8 +179,26 @@ export function Booking() {
                     <button type="submit">Submit</button>
                 </div>
             </form>
-            <div id="result">
-
+            <div id="flight-summary">
+                <h1>Flight Summary</h1>
+                <div>
+                    {formData.selectedFlightID ? (
+                        <ul>
+                            <li><strong>Flight number: </strong>{formData.selectedFlightID}</li>
+                            <li><strong>Destination: </strong>{formData.destination}</li>
+                            <li><strong>Origin: </strong>{formData.origin}</li>
+                            <li><strong>Departure Date: </strong>{formData.departureDate}</li>
+                            <li><strong>Return Date: </strong>{formData.returnDate}</li>
+                            <li><strong>Departure Time: </strong>{formData.hour + " : " + formData.minute}</li>
+                            <li><strong>Type: </strong>{formData.flightType}</li>
+                            <li><strong>Class:</strong> {formData.flightClass}</li>
+                            <li><strong>Duration:</strong> {formData.flightDuration}</li>
+                            <li><strong>Price:</strong> SGD {formData.flightPrice}</li>
+                        </ul>
+                    ) : (
+                        <p>No flight selected.</p>
+                    )}
+                </div>
             </div>
             <ToastContainer />
         </div>
