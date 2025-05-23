@@ -13,6 +13,11 @@
     font-size: 1.3vw;
 }
 
+.box-divider {
+    border-top: 1px solid #231503;
+    width: 100%;
+}
+
 .user-form {
     display: flex;
     flex-direction: column;
@@ -38,6 +43,7 @@
     text-align: center;
     align-items: center;
     width: auto;
+    margin: 10vh;
 }
 
 #flight-details div {
@@ -58,6 +64,7 @@
 #user-detail {
     display: flex;
     flex-direction: column;
+    margin: 10vh;
 }
 
 #user-detail div {
@@ -69,7 +76,11 @@
 #user-detail input {
     line-height: 1.5vh;
     border: none;
-    border-top: 2px solid #231503;
+    border-bottom: 2px solid #231503;
+}
+
+#flight-list {
+    margin: 10vh;
 }
 
 #flight-table {
@@ -86,17 +97,25 @@
     padding: 8px;
 }
 
+#submit-btn{
+    border: none;
+    padding: 20px;
+    background: #f1e8dc;
+    color: #f1e8dc;
+}
+
 
 #flight-summary {
     display: block;
     align-items: center;
     text-align: center;
+    margin: 10vh;
 }
 
 #flight-summary div {
     display: flex;
     flex-direction: column;
-    line-height: 2vh;
+    line-height: 3.2vh;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -112,9 +131,12 @@
 }
 
 #flight-summary button {
-    background-color: #f3efe4;
+    color: #f3efe4;
+    background-color: #231503;
     width: 150px;
-    margin-bottom: 15px;
+    margin-bottom: px;
+    padding: 10px;
+    border: none;
 }
 
 #flight-summary button:hover {

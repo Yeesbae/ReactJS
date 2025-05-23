@@ -69,9 +69,9 @@ export function Booking() {
         <div className='booking-page'>
             <form onSubmit={handleSubmit} className="user-form">
                 <div id="flight-location">
-                    <h1>Select your flight.</h1>
+                    <h1>Select your flight</h1>
                     <div>
-                        <a>from </a>
+                        <label>Departing from: </label>
                         <select name='origin' value={formData.origin} onChange={handleChange}>
                             <option value='London'>London</option>
                             <option value='New York'>New York</option>
@@ -79,8 +79,7 @@ export function Booking() {
                             <option value='Paris'>Paris</option>
                             <option value='Los Angeles'>Los Angeles</option>
                         </select>
-                        
-                        <a> to </a>
+                        <label> Arriving at: </label>
                         <select name='destination' value={formData.destination} onChange={handleChange}>
                             <option value='London'>London</option>
                             <option value='New York'>New York</option>
@@ -91,15 +90,14 @@ export function Booking() {
                     </div>
                 </div>
                 <div id='flight-details'>
-                    <h1>Flight Details</h1>
+                    <h1>Flight details</h1>
                     <div className='flight-type'>
                         <label htmlFor="one-way">One Way</label>
                         <input type="radio" name="flightType" id='one-way' value="one-way" checked={formData.flightType === "one-way"} onChange={handleChange}/>
                         <label htmlFor="round-trip">Round Trip</label>
                         <input type="radio" name="flightType" id='round-trip' value="round-trip" checked={formData.flightType === "round-trip"} onChange={handleChange} />
                     </div>
-                    
-                    <h1>Select your flight date and time.</h1>
+                    <h1>Flight date and time</h1>
                     <div>
                         <label>Departure Date: </label>
                         <input type="date" name="departureDate" value={formData.departureDate} onChange={handleChange} />
@@ -108,7 +106,7 @@ export function Booking() {
                     </div>
                     <br />
                     <div>
-                        <label htmlFor="departure-time-hr">Hour </label>
+                        <label>Time: </label>
                         <select name="hour" value={formData.hour} onChange={handleChange}>
                             <option value="00">00</option>
                             <option value="01">01</option>
@@ -135,13 +133,14 @@ export function Booking() {
                             <option value="22">22</option>
                             <option value="23">23</option>
                         </select>
-                        <label htmlFor="departure-time-min"> Minute </label>
+                        <a> : </a>
                         <select name="minute" value={formData.minute} onChange={handleChange}>
                             <option value="00">00</option>
                             <option value="30">30</option>
                         </select>
                     </div>
                 </div>
+                <div className="box-divider"></div>
                 <div id='user-detail'>
                     <h1>Your details</h1>
                     <div>
@@ -152,7 +151,8 @@ export function Booking() {
                         <input type="text" name="passport" placeholder="Passport Number" value={formData.passport} onChange={handleChange} required />
                     </div>
                 </div>
-                <div>
+                <div className="box-divider"></div>
+                <div id='flight-list'>
                     <h1>Flight Lists</h1>
                     <table id="flight-table">
                         <tr>
@@ -198,7 +198,7 @@ export function Booking() {
                     </table>
                 </div>
                 <div>
-                    <button type="submit">Submit</button>
+                    <button id="submit-btn" type="submit">Submit</button>
                 </div>
             </form>
             <div id="flight-summary">
@@ -220,7 +220,6 @@ export function Booking() {
                             </ul>
                             <button type="button" onClick={handleReset}>Clear all value</button>
                         </div>
-                        
                     ) : (
                         <div>
                             <p>No flight selected.</p>
