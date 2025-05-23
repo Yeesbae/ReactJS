@@ -28,9 +28,12 @@ export function Booking() {
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         console.log(formData);
-        toast.success("Flight booked successfully!", {
-          position: "top-center",
-          autoClose: 3000,
+        toast.success("Flight booked successfully! \n Name: " + formData.firstName + " " + formData.lastName
+            + "\n Flying to " + formData.destination + " from " + formData.origin
+            + "\n Departure date & time: " + formData.departureDate + " " + formData.hour + " : " + formData.minute, 
+            {
+            position: "top-center",
+            autoClose: 3000,
         });
       };
 
