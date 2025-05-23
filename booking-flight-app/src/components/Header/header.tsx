@@ -5,7 +5,7 @@ export function Header() {
     return (
         <header className="main-header">
             <div>
-                <h1>Booking Flight</h1>
+                <h1>Flight Booking</h1>
             </div>
         </header>
     )

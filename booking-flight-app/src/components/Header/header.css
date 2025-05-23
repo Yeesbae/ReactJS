@@ -1,15 +1,14 @@
 .main-header {
-    background-color: #282c34;
+    background-color: #231503;
     min-height: 5rem; /* rem uses root font size */
     width: 100%;
     display: flex;
     padding: 0 10px;
-    color: black;
+    color: #f8f4ee;
     flex-direction: column;
-    background-color: pink;
     text-align: center;
 }
 
 h1 {
-    font-size: 2.5rem;
+    font-size: 2vw;
 }

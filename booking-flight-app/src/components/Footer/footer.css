@@ -1,14 +1,16 @@
 .main-footer {
-    background-color: #282c34;
-    min-height: 15rem;
+    background-color: #231503;
+    height: 15rem;
     width: 100%;
     padding: 0 10px;
-    color: black;
-    background-color: pink;
+    color: #f8f4ee;
 }
 
-.main-footer .copyright-text {
+#copyright-text {
+    margin: 0 auto;
     text-align: center;
-    padding: 1rem 0;
+    padding: 1rem;
+    line-height: 1.5vh;
+    font-size: 1.3vw;
 }
 

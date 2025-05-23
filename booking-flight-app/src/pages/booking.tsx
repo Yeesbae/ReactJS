@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
 import './booking.css';
-import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import React, { useState } from 'react';
+import { ToastContainer, toast } from "react-toastify";
 import { flights } from '../data/flights';
 
 export function Booking() {
@@ -143,7 +143,7 @@ export function Booking() {
                     </div>
                 </div>
                 <div id='user-detail'>
-                    <h1>Your details.</h1>
+                    <h1>Your details</h1>
                     <div>
                         <input type="text" name="firstName" placeholder="First Name" value={formData.firstName} onChange={handleChange} required />
                         <input type="text" name="lastName" placeholder="Last Name" value={formData.lastName} onChange={handleChange} required />
@@ -169,8 +169,8 @@ export function Booking() {
                         {flights.map((flight) => (
                             <tr key={flight.id}>
                                 <td>{flight.id}</td>
-                                <td>{flight.from}</td>
-                                <td>{flight.to}</td>
+                                <td>{flight.origin}</td>
+                                <td>{flight.destination}</td>
                                 <td>{flight.departureTime}</td>
                                 <td>{flight.arrivalTime}</td>
                                 <td>{flight.flightDuration}</td>
@@ -184,8 +184,8 @@ export function Booking() {
                                         onChange={() => 
                                             setFormData((prev) => ({
                                                 ...prev,
-                                                origin: String(flight.from),
-                                                destination: String(flight.to),
+                                                origin: String(flight.origin),
+                                                destination: String(flight.destination),
                                                 selectedFlightID: flight.id,
                                                 flightPrice: String(flight.price),
                                                 flightClass: flight.flightClass,

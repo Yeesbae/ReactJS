@@ -3,12 +3,14 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    font-size: 1.3rem;
-    background-color: peachpuff;
+    font-size: 1.3vw;
+    height: fit-content;
+    position: relative;
+    padding: 10px
 }
 
 .booking-page select, option, input, button{
-    font-size: 1.3rem;
+    font-size: 1.3vw;
 }
 
 .user-form {
@@ -16,7 +18,7 @@
     flex-direction: column;
     align-items: center;
     margin: 0 auto;
-    gap: 1.5rem;
+    gap: 1.5vh;
 }
 
 .booking-page form div {
@@ -41,7 +43,7 @@
 #flight-details div {
     display: flex;
     flex-direction: row;
-    gap: 1rem;
+    gap: 1vw;
 }
 
 #flight-type {
@@ -61,11 +63,13 @@
 #user-detail div {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1.5vh;
 }
 
 #user-detail input {
-    line-height: 1.5rem;
+    line-height: 1.5vh;
+    border: none;
+    border-top: 2px solid #231503;
 }
 
 #flight-table {
@@ -73,11 +77,12 @@
 }
 
 #flight-table th {
-    background-color: #f2f2f2;
+    background-color: #f1e8dc;
+    color: #231503;
 }
 
 #flight-table th, td {
-    border: 1px solid #ddd;
+    border: 1px solid #231503;
     padding: 8px;
 }
 
@@ -91,7 +96,7 @@
 #flight-summary div {
     display: flex;
     flex-direction: column;
-    line-height: 2rem;
+    line-height: 2vh;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -107,10 +112,11 @@
 }
 
 #flight-summary button {
+    background-color: #f3efe4;
     width: 150px;
     margin-bottom: 15px;
 }
 
 #flight-summary button:hover {
-    color: blue;
+    opacity: 0.6;
 }

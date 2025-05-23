@@ -1,9 +1,10 @@
 html, body {
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   overflow-x: hidden;
   width: 100%;
-  background-color: pink;
+  background-color: #f8f4ee;
+  color: #231503;
 }
 
 .App {
@@ -17,7 +18,6 @@ html, body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: white;
 }
 
 .App-body {
@@ -25,9 +25,9 @@ html, body {
   flex-direction: column;
   align-items: center;
   /* justify-content: center; */
-  min-height: 90vh;
+  height: max-content;
   width: 100%;
-  margin: auto;
+  margin: 0 auto;
   padding: 0 20px;
   box-sizing: border-box;
 }
