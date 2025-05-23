@@ -222,7 +222,9 @@ export function Booking() {
                         </div>
                         
                     ) : (
-                        <p>No flight selected.</p>
+                        <div>
+                            <p>No flight selected.</p>
+                        </div>
                     )}
                 </div>
             </div>

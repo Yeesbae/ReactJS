@@ -4,6 +4,7 @@
     align-items: center;
     text-align: center;
     font-size: 1.3rem;
+    background-color: peachpuff;
 }
 
 .booking-page select, option, input, button{
@@ -85,16 +86,20 @@
     display: block;
     align-items: center;
     text-align: center;
-    width: fit-content;
 }
 
 #flight-summary div {
     display: flex;
     flex-direction: column;
-    width: max-content;
-    text-align: left;
     line-height: 2rem;
+    justify-content: center;
     align-items: center;
+    text-align: center;
+}
+
+#flight-summary ul {
+    text-align: left;
+    margin-bottom: 40px;
 }
 
 #flight-summary ul li{
@@ -103,6 +108,7 @@
 
 #flight-summary button {
     width: 150px;
+    margin-bottom: 15px;
 }
 
 #flight-summary button:hover {
