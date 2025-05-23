@@ -63,9 +63,9 @@ export function Booking() {
                     <h1>Flight Details</h1>
                     <div className='flight-type'>
                         <label htmlFor="one-way">One Way</label>
-                        <input type="radio" name="flight-type" id='one-way' value="one-way" checked={formData.flightType === "one-way"} onChange={handleChange}/>
+                        <input type="radio" name="flightType" id='one-way' value="one-way" checked={formData.flightType === "one-way"} onChange={handleChange}/>
                         <label htmlFor="round-trip">Round Trip</label>
-                        <input type="radio" name="flight-type" id='round-trip' value="round-trip" checked={formData.flightType === "round-trip"} onChange={handleChange} />
+                        <input type="radio" name="flightType" id='round-trip' value="round-trip" checked={formData.flightType === "round-trip"} onChange={handleChange} />
                     </div>
                     
                     <h1>Select your flight date and time.</h1>
@@ -78,7 +78,7 @@ export function Booking() {
                     <br /> <br /> <br />
                     <div>
                         <label htmlFor="departure-time-hr">Hour </label>
-                        <select name="departure-time-hr" value={formData.hour} onChange={handleChange}>
+                        <select name="hour" value={formData.hour} onChange={handleChange}>
                             <option value="00">00</option>
                             <option value="01">01</option>
                             <option value="02">02</option>
@@ -105,7 +105,7 @@ export function Booking() {
                             <option value="23">23</option>
                         </select>
                         <label htmlFor="departure-time-min"> Minute </label>
-                        <select name="departure-time-min" value={formData.minute} onChange={handleChange}>
+                        <select name="minute" value={formData.minute} onChange={handleChange}>
                             <option value="00">00</option>
                             <option value="30">30</option>
                         </select>
@@ -114,11 +114,11 @@ export function Booking() {
                 <div id='user-detail'>
                     <h1>Please Enter your details.</h1>
                     <div>
-                        <input type="text" placeholder="First Name" value={formData.firstName} onChange={handleChange} required />
-                        <input type="text" placeholder="Last Name" value={formData.lastName} onChange={handleChange} required />
-                        <input type="text" placeholder="Email" value={formData.email} onChange={handleChange} required />
-                        <input type="text" placeholder="Phone Number" value={formData.phone} onChange={handleChange} required />
-                        <input type="text" placeholder="Passport Number" value={formData.passport} onChange={handleChange} required />
+                        <input type="text" name="firstName" placeholder="First Name" value={formData.firstName} onChange={handleChange} required />
+                        <input type="text" name="lastName" placeholder="Last Name" value={formData.lastName} onChange={handleChange} required />
+                        <input type="text" name="email" placeholder="Email" value={formData.email} onChange={handleChange} required />
+                        <input type="text" name="phone" placeholder="Phone Number" value={formData.phone} onChange={handleChange} required />
+                        <input type="text" name="passport" placeholder="Passport Number" value={formData.passport} onChange={handleChange} required />
                     </div>
                 </div>
                 <div>
