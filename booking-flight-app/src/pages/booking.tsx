@@ -18,6 +18,7 @@ export function Booking() {
         returnDate: "",
         hour: "",
         minute: "",
+        selectedFlightID: "",
     });
     
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
@@ -30,7 +31,8 @@ export function Booking() {
         console.log(formData);
         toast.success("Flight booked successfully! \n Name: " + formData.firstName + " " + formData.lastName
             + "\n Flying to " + formData.destination + " from " + formData.origin
-            + "\n Departure date & time: " + formData.departureDate + " " + formData.hour + " : " + formData.minute, 
+            + "\n Departure date & time: " + formData.departureDate + " " + formData.hour + " : " + formData.minute
+            + "\n Flight Number: " + formData.selectedFlightID, 
             {
             position: "top-center",
             autoClose: 3000,
@@ -136,6 +138,7 @@ export function Booking() {
                             <th>Flight Duration</th>
                             <th>Flight Class</th>
                             <th>Price (SGD)</th>
+                            <th>Select</th>
                         </tr>
                         {flights.map((flight) => (
                             <tr key={flight.id}>
@@ -147,6 +150,7 @@ export function Booking() {
                                 <td>{flight.flightDuration}</td>
                                 <td>{flight.flightClass}</td>
                                 <td>{flight.price}</td>
+                                <td><input type='radio' name="selectedFlightID" value={flight.id} checked={formData.selectedFlightID === flight.id} onChange={handleChange}></input></td>
                             </tr>
                         ))}
                     </table>
@@ -155,6 +159,9 @@ export function Booking() {
                     <button type="submit">Submit</button>
                 </div>
             </form>
+            <div id="result">
+
+            </div>
             <ToastContainer />
         </div>
     )
