@@ -84,7 +84,7 @@ export function Booking() {
                         <label> Return Date: </label>
                         <input type="date" name="returnDate" value={formData.returnDate} onChange={handleChange} />
                     </div>
-                    <br /> <br /> <br />
+                    <br />
                     <div>
                         <label htmlFor="departure-time-hr">Hour </label>
                         <select name="hour" value={formData.hour} onChange={handleChange}>
@@ -121,7 +121,7 @@ export function Booking() {
                     </div>
                 </div>
                 <div id='user-detail'>
-                    <h1>Please Enter your details.</h1>
+                    <h1>Your details.</h1>
                     <div>
                         <input type="text" name="firstName" placeholder="First Name" value={formData.firstName} onChange={handleChange} required />
                         <input type="text" name="lastName" placeholder="Last Name" value={formData.lastName} onChange={handleChange} required />

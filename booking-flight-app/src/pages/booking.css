@@ -3,6 +3,11 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
+    font-size: 1.3rem;
+}
+
+.booking-page select, option, input {
+    font-size: 1.3rem;
 }
 
 .user-form {
@@ -58,6 +63,10 @@
     gap: 1.5rem;
 }
 
+#user-detail input {
+    line-height: 1.5rem;
+}
+
 #flight-table {
     border-collapse: collapse;
 }
@@ -81,7 +90,7 @@
 #flight-summary div {
     width: max-content;
     text-align: left;
-    line-height: 1.5rem;
+    line-height: 2rem;
 }
 
 #flight-summary ul li{
