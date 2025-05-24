@@ -6,7 +6,7 @@ export interface Flight {
     departureTime: string;
     arrivalTime: string;
     price: number;
-    flightClass: string;
+    cabinClass: string;
     flightDuration: string;
 }
 
@@ -19,29 +19,29 @@ export const flights: Flight[] = [
         departureTime: '10:00 AM',
         arrivalTime: '12:00 PM',
         price: 200,
-        flightClass: 'Economy',
+        cabinClass: 'Economy',
         flightDuration: '12 hours'
     },
     {
         id: 'CX001',
         airline: 'Airline 2',
-        origin: 'New York (JFK)',
-        destination: 'Los Angeles (LAX)',
+        origin: 'Tokyo (HND)',
+        destination: 'London (LHR)',
         departureTime: '11:00 AM',
         arrivalTime: '14:00 PM',
         price: 2200,
-        flightClass: 'First',
+        cabinClass: 'First',
         flightDuration: '14 hours'
     },
     {
         id: 'MU001',
         airline: 'Airline 3',
-        origin: 'New York (JFK)',
-        destination: 'Los Angeles (LAX)',
+        origin:'Los Angeles (LAX)',
+        destination: 'Paris (CDG)',
         departureTime: '09:00 AM',
         arrivalTime: '13:00 PM',
         price: 1200,
-        flightClass: 'Business',
+        cabinClass: 'Business',
         flightDuration: '2 hours'
     }
 ]

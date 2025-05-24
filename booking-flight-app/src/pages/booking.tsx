@@ -22,7 +22,7 @@ export function Booking() {
         selectedFlightID: "",
         flightPrice: "",
         flightDuration: "",
-        flightClass: "",
+        cabinClass: "",
     });
     
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
@@ -61,7 +61,7 @@ export function Booking() {
             selectedFlightID: "",
             flightPrice: "",
             flightDuration: "",
-            flightClass: "",
+            cabinClass: "",
         });
     };
 
@@ -73,22 +73,23 @@ export function Booking() {
                     <div>
                         <label>Departing from: </label>
                         <select name='origin' value={formData.origin} onChange={handleChange}>
-                            <option value='London'>London</option>
-                            <option value='New York'>New York</option>
-                            <option value='Tokyo'>Tokyo</option>
-                            <option value='Paris'>Paris</option>
-                            <option value='Los Angeles'>Los Angeles</option>
+                            <option value='London'>London (LHR)</option>
+                            <option value='New York'>New York (JFK)</option>
+                            <option value='Tokyo'>Tokyo (HND)</option>
+                            <option value='Paris'>Paris (CDG)</option>
+                            <option value='Los Angeles'>Los Angeles (LAX)</option>
                         </select>
                         <label> Arriving at: </label>
                         <select name='destination' value={formData.destination} onChange={handleChange}>
-                            <option value='London'>London</option>
-                            <option value='New York'>New York</option>
-                            <option value='Tokyo'>Tokyo</option>
-                            <option value='Paris'>Paris</option>
-                            <option value='Los Angeles'>Los Angeles</option>
+                            <option value='London'>London (LHR)</option>
+                            <option value='New York'>New York (JFK)</option>
+                            <option value='Tokyo'>Tokyo (HND)</option>
+                            <option value='Paris'>Paris (CDG)</option>
+                            <option value='Los Angeles'>Los Angeles (LAX)</option>
                         </select>
                     </div>
                 </div>
+                <br />
                 <div id='flight-details'>
                     <h1>Flight details</h1>
                     <div className='flight-type'>
@@ -97,6 +98,7 @@ export function Booking() {
                         <label htmlFor="round-trip">Round Trip</label>
                         <input type="radio" name="flightType" id='round-trip' value="round-trip" checked={formData.flightType === "round-trip"} onChange={handleChange} />
                     </div>
+                    <br />
                     <h1>Flight date and time</h1>
                     <div>
                         <label>Departure Date: </label>
@@ -174,7 +176,7 @@ export function Booking() {
                                 <td>{flight.departureTime}</td>
                                 <td>{flight.arrivalTime}</td>
                                 <td>{flight.flightDuration}</td>
-                                <td>{flight.flightClass}</td>
+                                <td>{flight.cabinClass}</td>
                                 <td>{flight.price}</td>
                                 <td><input 
                                         type='radio' 
@@ -188,7 +190,7 @@ export function Booking() {
                                                 destination: String(flight.destination),
                                                 selectedFlightID: flight.id,
                                                 flightPrice: String(flight.price),
-                                                flightClass: flight.flightClass,
+                                                cabinClass: flight.cabinClass,
                                                 flightDuration: String(flight.flightDuration),
                                             }))
                                         } />
@@ -214,7 +216,7 @@ export function Booking() {
                                 <li><strong>Return Date: </strong>{formData.returnDate}</li>
                                 <li><strong>Departure Time: </strong>{formData.hour + " : " + formData.minute}</li>
                                 <li><strong>Type: </strong>{formData.flightType}</li>
-                                <li><strong>Class:</strong> {formData.flightClass}</li>
+                                <li><strong>Cabin Class:</strong> {formData.cabinClass}</li>
                                 <li><strong>Duration:</strong> {formData.flightDuration}</li>
                                 <li><strong>Price:</strong> SGD {formData.flightPrice}</li>
                             </ul>

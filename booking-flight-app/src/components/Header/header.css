@@ -1,14 +1,14 @@
 .main-header {
     background-color: #231503;
-    min-height: 5rem; /* rem uses root font size */
+    min-height: 3rem; /* rem uses root font size */
     width: 100%;
     display: flex;
     padding: 0 10px;
     color: #f8f4ee;
-    flex-direction: column;
     text-align: center;
+    flex-direction: column;
 }
 
-h1 {
-    font-size: 2vw;
+.main-header h1 {
+    font-size: 1.5vw;
 }
