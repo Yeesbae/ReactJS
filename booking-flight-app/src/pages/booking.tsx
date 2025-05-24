@@ -1,8 +1,10 @@
 import './booking.css';
 import 'react-toastify/dist/ReactToastify.css';
-import React, { useState } from 'react';
+
+import React, { useState, useEffect } from 'react';
 import { ToastContainer, toast } from "react-toastify";
 import { flights } from '../data/flights';
+import { setDefaultDepartureDate, setDefaultReturnDate } from '../utils/dateUtils';
 
 export function Booking() {
     const [formData, setFormData] = useState({
@@ -12,18 +14,26 @@ export function Booking() {
         email: "",
         phone: "",
         passport: "",
-        destination: "",
-        origin: "",
-        flightType: "",
+        destination: "Los Angeles",
+        origin: "New York",
+        flightType: "round-trip",
         departureDate: "",
         returnDate: "",
-        hour: "",
-        minute: "",
+        hour: "10",
+        minute: "00",
         selectedFlightID: "",
         flightPrice: "",
         flightDuration: "",
         cabinClass: "",
     });
+
+    useEffect(() => {
+        setFormData((prev) => ({
+            ...prev,
+            departureDate: setDefaultDepartureDate(),
+            returnDate: setDefaultReturnDate()
+        }));
+    }, []);
     
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
         const { name, value } = e.target;
@@ -75,7 +85,7 @@ export function Booking() {
                         <select name='origin' value={formData.origin} onChange={handleChange}>
                             <option value='London'>London (LHR)</option>
                             <option value='New York'>New York (JFK)</option>
-                            <option value='Tokyo'>Tokyo (HND)</option>
+                            <option value='Tokyo' selected>Tokyo (HND)</option>
                             <option value='Paris'>Paris (CDG)</option>
                             <option value='Los Angeles'>Los Angeles (LAX)</option>
                         </select>
@@ -108,7 +118,7 @@ export function Booking() {
                     </div>
                     <br />
                     <div>
-                        <label>Time: </label>
+                        <label>Departing Time: </label>
                         <select name="hour" value={formData.hour} onChange={handleChange}>
                             <option value="00">00</option>
                             <option value="01">01</option>
@@ -214,7 +224,7 @@ export function Booking() {
                                 <li><strong>Origin: </strong>{formData.origin}</li>
                                 <li><strong>Departure Date: </strong>{formData.departureDate}</li>
                                 <li><strong>Return Date: </strong>{formData.returnDate}</li>
-                                <li><strong>Departure Time: </strong>{formData.hour + " : " + formData.minute}</li>
+                                <li><strong>Departure Time: </strong>{formData.hour + " : " + formData.minute} hours</li>
                                 <li><strong>Type: </strong>{formData.flightType}</li>
                                 <li><strong>Cabin Class:</strong> {formData.cabinClass}</li>
                                 <li><strong>Duration:</strong> {formData.flightDuration}</li>
